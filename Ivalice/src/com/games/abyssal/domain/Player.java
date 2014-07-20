@@ -2,17 +2,25 @@ package com.games.abyssal.domain;
 
 import java.util.Collection;
 
-public class Player {
+public class Player extends Entity {
+
+	public Player(long id, String login) {
+		super();
+		this.id = id;
+		this.login = login;
+	}
 
 	private long id;
 	private String login;
 	
 	private Collection<ItemOnPlayer> items;
 
+	
+	
 	/**
 	 * @return the id
 	 */
-	public long getId() {
+	public Long getId() {
 		return id;
 	}
 

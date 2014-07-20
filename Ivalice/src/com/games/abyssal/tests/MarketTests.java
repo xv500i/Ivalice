@@ -13,6 +13,7 @@ import com.games.abyssal.domain.Item;
 import com.games.abyssal.domain.ItemOnPlayer;
 import com.games.abyssal.domain.Market;
 import com.games.abyssal.domain.Player;
+import com.games.abyssal.domain.EntityManagers.ItemManager;
 import com.games.abyssal.exceptions.ItemAlreadyInMarketException;
 import com.games.abyssal.exceptions.ItemNotBeeingSoldException;
 
@@ -22,16 +23,12 @@ public class MarketTests {
 	public void test() {
 		Market market = new Market();
 		
-		Player player = new Player();
-		player.setId(0L);
-		player.setLogin("Alex");
+		Player player = new Player(0L, "Alex");
 		
-		Player seller = new Player();
-		player.setId(1L);
-		player.setLogin("AlexSeller");
+		Player seller = new Player(1L, "AlexSeller");
 		
 		Collection<Item> items = new ArrayList<>();
-		Item woodenSword = new Item(0L, "Wooden Sword", "The wooden sword is the basic sword", 100);
+		Item woodenSword = ItemManager.getInstance().get(0L);
 		items.add(woodenSword);
 		
 		try {

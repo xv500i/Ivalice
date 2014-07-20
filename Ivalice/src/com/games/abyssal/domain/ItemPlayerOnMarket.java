@@ -2,7 +2,7 @@ package com.games.abyssal.domain;
 
 import java.util.Date;
 
-public class ItemPlayerOnMarket {
+public class ItemPlayerOnMarket extends Entity{
 	private Date submitedOn;
 	private int initialPrice;
 	private ItemOnPlayer item;
@@ -42,8 +42,8 @@ public class ItemPlayerOnMarket {
 	public void setItem(ItemOnPlayer item) {
 		this.item = item;
 	}
-	public long getInstanceId() {
-		return item.getInstanceId();
+	public Long getId() {
+		return item.getId();
 	}
 	public String getName() {
 		return item.getName();

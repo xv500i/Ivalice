@@ -39,7 +39,7 @@ public class Market {
 			buyer.getLogin(),
 			buyer.getId(),
 			item.getName(),
-			item.getInstanceId(),
+			item.getId(),
 			price)
 		);
 		return true;
@@ -62,13 +62,13 @@ public class Market {
 	}
 
 	public void addItem(ItemOnPlayer newItemOnPlayer, int price) throws ItemAlreadyInMarketException {
-		ItemPlayerOnMarket item = items.get(newItemOnPlayer.getInstanceId());
+		ItemPlayerOnMarket item = items.get(newItemOnPlayer.getId());
 		if (item != null) throw new ItemAlreadyInMarketException();
 		ItemPlayerOnMarket newItem = new ItemPlayerOnMarket();
 		newItem.setItem(newItemOnPlayer);
 		newItem.setInitialPrice(price);
 		newItem.setSubmitedOn(new Date());
-		items.put(newItemOnPlayer.getInstanceId(), newItem);
+		items.put(newItemOnPlayer.getId(), newItem);
 	}
 	
 }

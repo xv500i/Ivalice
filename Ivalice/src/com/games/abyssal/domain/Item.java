@@ -4,7 +4,7 @@ package com.games.abyssal.domain;
  * @author alex
  *
  */
-public class Item {
+public class Item extends Entity {
 	
 	public Item(long id, String name, String description, int price) {
 		this.id = id;
@@ -28,7 +28,7 @@ public class Item {
 	/**
 	 * @return the id
 	 */
-	public long getId() {
+	public Long getId() {
 		return id;
 	}
 	

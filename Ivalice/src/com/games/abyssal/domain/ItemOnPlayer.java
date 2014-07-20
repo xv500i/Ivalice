@@ -2,7 +2,7 @@ package com.games.abyssal.domain;
 
 import java.util.Date;
 
-public class ItemOnPlayer {
+public class ItemOnPlayer extends Entity{
 
 	private Date adquiredOn;
 	private long instanceId;
@@ -24,13 +24,13 @@ public class ItemOnPlayer {
 	/**
 	 * @return the instanceId
 	 */
-	public long getInstanceId() {
+	public Long getId() {
 		return instanceId;
 	}
 	/**
 	 * @param instanceId the instanceId to set
 	 */
-	public void setInstanceId(long instanceId) {
+	public void setId(long instanceId) {
 		this.instanceId = instanceId;
 	}
 	/**
