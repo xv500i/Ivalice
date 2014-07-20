@@ -6,6 +6,13 @@ package com.games.abyssal.domain;
  */
 public class Item {
 	
+	public Item(long id, String name, String description, int price) {
+		this.id = id;
+		this.name = name;
+		this.description = description;
+		this.price = price;
+	}
+
 	/** The id */
 	private long id;
 	
@@ -24,6 +31,8 @@ public class Item {
 	public long getId() {
 		return id;
 	}
+	
+	
 	
 	/**
 	 * @param id the id to set
