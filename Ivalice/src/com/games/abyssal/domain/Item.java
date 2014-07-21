@@ -1,11 +1,19 @@
 package com.games.abyssal.domain;
 
 /**
+ * Represents a general item that players can acquire and trade.
  * @author alex
  *
  */
 public class Item extends Entity {
 	
+	/**
+	 * Basic constructor.
+	 * @param id the id
+	 * @param name the name
+	 * @param description the description
+	 * @param price the price
+	 */
 	public Item(long id, String name, String description, int price) {
 		this.id = id;
 		this.name = name;
@@ -25,14 +33,10 @@ public class Item extends Entity {
 	/** The price */
 	private int price;
 	
-	/**
-	 * @return the id
-	 */
+	@Override
 	public Long getId() {
 		return id;
 	}
-	
-	
 	
 	/**
 	 * @param id the id to set

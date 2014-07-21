@@ -2,21 +2,33 @@ package com.games.abyssal.domain;
 
 import java.util.Collection;
 
+/**
+ * Represents a player info
+ * @author alex
+ *
+ */
 public class Player extends Entity {
 
+	/**
+	 * Basic constructor
+	 * @param id the identifier
+	 * @param login the login
+	 */
 	public Player(long id, String login) {
 		super();
 		this.id = id;
 		this.login = login;
 	}
 
+	/** The identifier */
 	private long id;
+	
+	/** The login */
 	private String login;
 	
+	/** The items of the player */
 	private Collection<ItemOnPlayer> items;
 
-	
-	
 	/**
 	 * @return the id
 	 */
@@ -58,6 +70,5 @@ public class Player extends Entity {
 	public void setItems(Collection<ItemOnPlayer> items) {
 		this.items = items;
 	}
-	
 	
 }

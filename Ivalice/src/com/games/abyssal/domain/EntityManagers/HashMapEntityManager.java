@@ -5,10 +5,19 @@ import java.util.HashMap;
 
 import com.games.abyssal.domain.Entity;
 
+/**
+ * A mock up implementation
+ * @author alex
+ *
+ */
 public class HashMapEntityManager<T extends Entity, K> implements EntityManager<T, K> {
 
+	/** A volatile storage */
 	protected HashMap<Object, T> entities;
 	
+	/**
+	 * Basic constructor
+	 */
 	protected HashMapEntityManager() {
 		entities = new HashMap<>();
 	}
