@@ -21,7 +21,7 @@ public class PlayerManager extends HashMapEntityManager<Player, Long> {
 	}
 	
 	/**
-	 * Instance accessor
+	 * Instance access
 	 * @return the instance
 	 */
 	public static PlayerManager getInstance()
