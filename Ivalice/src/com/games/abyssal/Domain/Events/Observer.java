@@ -1,4 +1,4 @@
-package com.games.abyssal.Domain;
+package com.games.abyssal.Domain.Events;
 
 /**
  * The Observer of the Observer pattern
@@ -6,5 +6,5 @@ package com.games.abyssal.Domain;
  *
  */
 public interface Observer {
-	public abstract void notifyEvent(Object sender, Object arguments);
+	public abstract void notify(Object sender, Object arguments);
 }
