@@ -1,10 +1,14 @@
 package com.games.abyssal.tests;
 
-import static org.junit.Assert.*;
+import static org.junit.Assert.assertFalse;
+import static org.junit.Assert.assertTrue;
+
+import java.util.ArrayList;
 
 import org.junit.Test;
 
-import com.games.abyssal.domain.Player;
+import com.games.abyssal.domain.Entities.ItemOnPlayer;
+import com.games.abyssal.domain.Entities.Player;
 import com.games.abyssal.domain.EntityManagers.PlayerManager;
 
 public class EntityManagerTests {
@@ -15,7 +19,7 @@ public class EntityManagerTests {
 		
 		Player me = manager.get(0L);
 		assertTrue("Player should not exist", me == null);
-		me = new Player(0L, "Alex");
+		me = new Player(0L, "Alex", new ArrayList<ItemOnPlayer>());
 		assertTrue("Creation failed", manager.create(me));
 		
 		me = manager.get(0L);

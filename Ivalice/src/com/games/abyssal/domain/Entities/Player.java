@@ -1,4 +1,4 @@
-package com.games.abyssal.domain;
+package com.games.abyssal.domain.Entities;
 
 import java.util.Collection;
 
@@ -14,10 +14,11 @@ public class Player extends Entity {
 	 * @param id the identifier
 	 * @param login the login
 	 */
-	public Player(long id, String login) {
+	public Player(long id, String login, Collection<ItemOnPlayer> items) {
 		super();
 		this.id = id;
 		this.login = login;
+		this.items = items;
 	}
 
 	/** The identifier */

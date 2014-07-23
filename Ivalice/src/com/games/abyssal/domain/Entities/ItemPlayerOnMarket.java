@@ -1,4 +1,4 @@
-package com.games.abyssal.domain;
+package com.games.abyssal.domain.Entities;
 
 import java.util.Date;
 
@@ -18,6 +18,19 @@ public class ItemPlayerOnMarket extends Entity{
 	/** The player's instance of the item */
 	private ItemOnPlayer item;
 	
+	/**
+	 * @param submitedOn
+	 * @param initialPrice
+	 * @param item
+	 */
+	public ItemPlayerOnMarket(Date submitedOn, int initialPrice,
+			ItemOnPlayer item) {
+		super();
+		this.submitedOn = submitedOn;
+		this.initialPrice = initialPrice;
+		this.item = item;
+	}
+
 	/**
 	 * @return the submitedOn
 	 */

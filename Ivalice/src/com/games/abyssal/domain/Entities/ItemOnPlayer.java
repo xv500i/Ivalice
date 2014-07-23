@@ -1,4 +1,4 @@
-package com.games.abyssal.domain;
+package com.games.abyssal.domain.Entities;
 
 import java.util.Date;
 
@@ -21,6 +21,20 @@ public class ItemOnPlayer extends Entity{
 	/** The player who owns the item */
 	private Player player;
 	
+	/** The instance of the item on the market or null */
+	private ItemPlayerOnMarket itemOnMarket;
+	
+	
+	public ItemOnPlayer(Date adquiredOn, long instanceId, Item item,
+			Player player, ItemPlayerOnMarket itemOnMarket) {
+		super();
+		this.adquiredOn = adquiredOn;
+		this.instanceId = instanceId;
+		this.item = item;
+		this.player = player;
+		this.itemOnMarket = itemOnMarket;
+	}
+
 	/**
 	 * @return the adquiredOn
 	 */
@@ -82,6 +96,34 @@ public class ItemOnPlayer extends Entity{
 	 */
 	public String getName() {
 		return item.getName();
+	}
+
+	/**
+	 * @return the instanceId
+	 */
+	public long getInstanceId() {
+		return instanceId;
+	}
+
+	/**
+	 * @param instanceId the instanceId to set
+	 */
+	public void setInstanceId(long instanceId) {
+		this.instanceId = instanceId;
+	}
+
+	/**
+	 * @return the itemOnMarket
+	 */
+	public ItemPlayerOnMarket getItemOnMarket() {
+		return itemOnMarket;
+	}
+
+	/**
+	 * @param itemOnMarket the itemOnMarket to set
+	 */
+	public void setItemOnMarket(ItemPlayerOnMarket itemOnMarket) {
+		this.itemOnMarket = itemOnMarket;
 	}
 
 }

@@ -9,10 +9,10 @@ import java.util.Date;
 
 import org.junit.Test;
 
-import com.games.abyssal.domain.Item;
-import com.games.abyssal.domain.ItemOnPlayer;
-import com.games.abyssal.domain.Market;
-import com.games.abyssal.domain.Player;
+import com.games.abyssal.domain.Entities.Item;
+import com.games.abyssal.domain.Entities.ItemOnPlayer;
+import com.games.abyssal.domain.Entities.Market;
+import com.games.abyssal.domain.Entities.Player;
 import com.games.abyssal.domain.EntityManagers.ItemManager;
 import com.games.abyssal.exceptions.ItemAlreadyInMarketException;
 import com.games.abyssal.exceptions.ItemNotBeeingSoldException;
@@ -23,9 +23,9 @@ public class MarketTests {
 	public void test() {
 		Market market = new Market();
 		
-		Player player = new Player(0L, "Alex");
+		Player player = new Player(0L, "Alex", new ArrayList<ItemOnPlayer>());
 		
-		Player seller = new Player(1L, "AlexSeller");
+		Player seller = new Player(1L, "AlexSeller", new ArrayList<ItemOnPlayer>());
 		
 		Collection<Item> items = new ArrayList<>();
 		Item woodenSword = ItemManager.getInstance().get(0L);
@@ -38,9 +38,7 @@ public class MarketTests {
 			
 		}
 		
-		ItemOnPlayer swordOnSeller = new ItemOnPlayer();
-		swordOnSeller.setPlayer(seller);
-		swordOnSeller.setItem(woodenSword);
+		ItemOnPlayer swordOnSeller = new ItemOnPlayer(new Date(), 0L, woodenSword, seller, null);
 		
 		try {
 			market.addItem(swordOnSeller, 100);

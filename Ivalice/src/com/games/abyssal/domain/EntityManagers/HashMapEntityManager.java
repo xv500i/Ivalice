@@ -3,7 +3,7 @@ package com.games.abyssal.domain.EntityManagers;
 import java.util.Collection;
 import java.util.HashMap;
 
-import com.games.abyssal.domain.Entity;
+import com.games.abyssal.domain.Entities.Entity;
 
 /**
  * A mock up implementation

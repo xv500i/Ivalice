@@ -1,4 +1,4 @@
-package com.games.abyssal.domain;
+package com.games.abyssal.domain.Entities;
 
 import java.util.Date;
 import java.util.HashMap;
@@ -97,10 +97,7 @@ public class Market {
 	public void addItem(ItemOnPlayer newItemOnPlayer, int price) throws ItemAlreadyInMarketException {
 		ItemPlayerOnMarket item = items.get(newItemOnPlayer.getId());
 		if (item != null) throw new ItemAlreadyInMarketException();
-		ItemPlayerOnMarket newItem = new ItemPlayerOnMarket();
-		newItem.setItem(newItemOnPlayer);
-		newItem.setInitialPrice(price);
-		newItem.setSubmitedOn(new Date());
+		ItemPlayerOnMarket newItem = new ItemPlayerOnMarket(new Date(), price, newItemOnPlayer);
 		items.put(newItemOnPlayer.getId(), newItem);
 	}
 	

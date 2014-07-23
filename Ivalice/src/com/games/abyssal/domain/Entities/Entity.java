@@ -1,4 +1,4 @@
-package com.games.abyssal.domain;
+package com.games.abyssal.domain.Entities;
 
 /**
  * This class represents a basic game entity that needs CRUD operations.

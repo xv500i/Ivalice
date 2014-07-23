@@ -1,6 +1,6 @@
 package com.games.abyssal.domain.EntityManagers;
 
-import com.games.abyssal.domain.Player;
+import com.games.abyssal.domain.Entities.Player;
 
 /**
  * Player manager
