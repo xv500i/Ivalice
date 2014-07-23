@@ -1,9 +1,9 @@
-package com.games.abyssal.domain.EntityManagers;
+package com.games.abyssal.Domain.EntityManagers;
 
 import java.util.Collection;
 import java.util.HashMap;
 
-import com.games.abyssal.domain.Entities.Entity;
+import com.games.abyssal.Domain.Entities.Entity;
 
 /**
  * A mock up implementation

@@ -1,6 +1,6 @@
-package com.games.abyssal.tests;
+package com.games.abyssal.Tests;
 
-import static org.junit.Assert.*;
+import static org.junit.Assert.fail;
 
 import java.util.ArrayList;
 import java.util.Calendar;
@@ -9,13 +9,13 @@ import java.util.Date;
 
 import org.junit.Test;
 
-import com.games.abyssal.domain.Entities.Item;
-import com.games.abyssal.domain.Entities.ItemOnPlayer;
-import com.games.abyssal.domain.Entities.Market;
-import com.games.abyssal.domain.Entities.Player;
-import com.games.abyssal.domain.EntityManagers.ItemManager;
-import com.games.abyssal.exceptions.ItemAlreadyInMarketException;
-import com.games.abyssal.exceptions.ItemNotBeeingSoldException;
+import com.games.abyssal.Domain.Entities.Item;
+import com.games.abyssal.Domain.Entities.ItemOnPlayer;
+import com.games.abyssal.Domain.Entities.Market;
+import com.games.abyssal.Domain.Entities.Player;
+import com.games.abyssal.Domain.EntityManagers.ItemManager;
+import com.games.abyssal.Exceptions.ItemAlreadyInMarketException;
+import com.games.abyssal.Exceptions.ItemNotBeeingSoldException;
 
 public class MarketTests {
 

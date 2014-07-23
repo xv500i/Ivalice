@@ -1,6 +1,6 @@
-package com.games.abyssal.domain.EntityManagers;
+package com.games.abyssal.Domain.EntityManagers;
 
-import com.games.abyssal.domain.Entities.Item;
+import com.games.abyssal.Domain.Entities.Item;
 
 /**
  * Item manager.

@@ -1,4 +1,4 @@
-package com.games.abyssal.tests;
+package com.games.abyssal.Tests;
 
 import static org.junit.Assert.assertFalse;
 import static org.junit.Assert.assertTrue;
@@ -7,9 +7,9 @@ import java.util.ArrayList;
 
 import org.junit.Test;
 
-import com.games.abyssal.domain.Entities.ItemOnPlayer;
-import com.games.abyssal.domain.Entities.Player;
-import com.games.abyssal.domain.EntityManagers.PlayerManager;
+import com.games.abyssal.Domain.Entities.ItemOnPlayer;
+import com.games.abyssal.Domain.Entities.Player;
+import com.games.abyssal.Domain.EntityManagers.PlayerManager;
 
 public class EntityManagerTests {
 

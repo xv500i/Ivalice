@@ -1,4 +1,4 @@
-package com.games.abyssal.domain;
+package com.games.abyssal.Domain;
 
 /**
  * The Observer of the Observer pattern

@@ -1,10 +1,10 @@
-package com.games.abyssal.tests;
+package com.games.abyssal.Tests;
 
-import static org.junit.Assert.*;
+import static org.junit.Assert.assertTrue;
 
 import org.junit.Test;
 
-import com.games.abyssal.domain.Game;
+import com.games.abyssal.Domain.Game;
 
 public class GameTests {
 

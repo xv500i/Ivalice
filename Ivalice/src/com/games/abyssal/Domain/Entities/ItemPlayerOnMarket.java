@@ -1,4 +1,4 @@
-package com.games.abyssal.domain.Entities;
+package com.games.abyssal.Domain.Entities;
 
 import java.util.Date;
 

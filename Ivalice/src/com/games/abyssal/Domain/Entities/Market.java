@@ -1,11 +1,11 @@
-package com.games.abyssal.domain.Entities;
+package com.games.abyssal.Domain.Entities;
 
 import java.util.Date;
 import java.util.HashMap;
 import java.util.logging.Logger;
 
-import com.games.abyssal.exceptions.ItemAlreadyInMarketException;
-import com.games.abyssal.exceptions.ItemNotBeeingSoldException;
+import com.games.abyssal.Exceptions.ItemAlreadyInMarketException;
+import com.games.abyssal.Exceptions.ItemNotBeeingSoldException;
 
 /**
  * Represents a Market when the users can sell items.
