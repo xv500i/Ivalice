@@ -5,8 +5,6 @@ import static org.junit.Assert.assertTrue;
 import org.junit.Test;
 
 import com.games.abyssal.Domain.Game;
-import com.games.abyssal.Domain.Entities.Player;
-import com.games.abyssal.Domain.EntityManagers.PlayerManager;
 
 public class GameTests {
 	
@@ -19,8 +17,10 @@ public class GameTests {
 		assertTrue(game.players != null);
 		assertTrue(game.items != null);
 		
-		PlayerManager.getInstance().create(new Player(99807L, "Alexis", null));
-		PlayerManager.getInstance().delete(new Player(99807L, "Alexis", null));
+		assertTrue(!game.exitGame);
+		game.mainMenuView.buttonExitClicked();
+		
+		assertTrue(game.exitGame);
 	}
 
 }
