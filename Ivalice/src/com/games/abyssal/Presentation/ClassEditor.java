@@ -1,9 +1,14 @@
 package com.games.abyssal.Presentation;
 
 import java.awt.EventQueue;
-import java.awt.event.ActionEvent;
-import java.awt.event.ActionListener;
 import java.awt.event.ItemEvent;
+import java.awt.event.ItemListener;
+import java.io.File;
+import java.io.FileInputStream;
+import java.io.FileOutputStream;
+import java.io.InputStream;
+import java.io.OutputStream;
+import java.util.Properties;
 
 import javax.swing.DefaultComboBoxModel;
 import javax.swing.JComboBox;
@@ -18,7 +23,8 @@ import javax.swing.SpinnerNumberModel;
 import javax.swing.SwingConstants;
 import javax.swing.event.ChangeEvent;
 import javax.swing.event.ChangeListener;
-import java.awt.event.ItemListener;
+import java.awt.event.ActionListener;
+import java.awt.event.ActionEvent;
 
 public class ClassEditor {
 
@@ -60,7 +66,7 @@ public class ClassEditor {
 		@Override
 		public String toString()
 		{
-			return String.format("%s;$.2f;$.2f;$.2f", function, a, b, c); 
+			return String.format("%s;%.2f;%.2f;%.2f", function, a, b, c); 
 		}
 	}
 
@@ -86,10 +92,44 @@ public class ClassEditor {
 	public ClassEditor() {
 		initialize();
 		PA = new AttributeInfo("pAttack");
+		frame.setTitle("Class editor v1.2 - Warrior.prop");
 		refreshInterface();
 	}
 	
+	public void importFile() {
+	    Properties props = new Properties();
+	    InputStream is = null;
+	 
+	    // First try loading from the current directory
+	    try {
+	        File f = new File("warrior.properties");
+	        is = new FileInputStream( f );
+	    }
+	    catch ( Exception e ) { is = null; }
+	 
+	    try {
+	        // Try loading properties from the file (if found)
+	        props.load( is );
+	    }
+	    catch ( Exception e ) {
+	    	System.err.println(e.getMessage());
+	    }
+	    //threadCnt  = new Integer(props.getProperty("ThreadCount", "5"));
+	}
 	
+	public void exportFile() {
+		try {
+	        Properties props = new Properties();
+	        props.setProperty("pAttack", PA.toString());
+	        File f = new File("warrior.properties");
+	        OutputStream out = new FileOutputStream( f );
+	        props.store(out, "Warrior class");
+	        System.out.println("Saved " + f.getAbsolutePath());
+	    }
+	    catch (Exception e ) {
+	        e.printStackTrace();
+	    }
+	}
 
 	private void refreshInterface() {
 		getSpinnerPAa().setValue(PA.a);
@@ -102,6 +142,22 @@ public class ClassEditor {
 		getTextPA10().setText(Integer.toString(examples[2]));
 		getTextPA15().setText(Integer.toString(examples[3]));
 		getTextPA20().setText(Integer.toString(examples[4]));
+		
+		switch (PA.function) {
+		case FUNCTION_CONSTANT:
+			spinnerPAb.setEnabled(false);
+			spinnerPAc.setEnabled(false);
+			break;
+		case FUNCTION_LINEAR:
+		case FUNCTION_ROOT:
+			spinnerPAb.setEnabled(true);
+			spinnerPAc.setEnabled(false);
+			break;
+		case FUNCTION_SQUARE:
+			spinnerPAb.setEnabled(true);
+			spinnerPAc.setEnabled(true);
+			break;
+		}
 	}
 	
 	private int[] getExamples(Float a, Float b, Float c, String function) {
@@ -126,15 +182,15 @@ public class ClassEditor {
 	}
 
 	private int linear(Float a, Float b, int x) {
-		return (int) (a*x + b);
+		return (int) (b*x + a);
 	}
 
 	private int square(Float a, Float b, Float c, int x) {
-		return (int) (Math.pow(a, b)*x + c);
+		return (int) (Math.pow(x, c)*b + a);
 	}
 
 	private int root(Float a, Float b, int x) {
-		return (int) (Math.pow(a, 0.5)*x + b);
+		return (int) (Math.pow(x, 0.5)*b + a);
 	}
 
 	private int constant(float a) {
@@ -156,6 +212,11 @@ public class ClassEditor {
 		menuBar.add(mnFile);
 		
 		JMenuItem mntmFile = new JMenuItem("Export");
+		mntmFile.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent arg0) {
+				exportFile();
+			}
+		});
 		mnFile.add(mntmFile);
 		
 		JMenuItem mntmImport = new JMenuItem("Import");
