@@ -31,8 +31,11 @@ public class SoundPlayer implements SoundAdapter {
 
 	@Override
 	public void stopBGE() {
-		playMP3.close();
-		playThread.interrupt();
+		if (playThread.isAlive())
+		{
+			playMP3.close();
+			playThread.interrupt();
+		}
 	}
 	
 	

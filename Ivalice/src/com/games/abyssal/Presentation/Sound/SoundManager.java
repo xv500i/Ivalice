@@ -22,12 +22,17 @@ public class SoundManager {
 		return instance;
 	}
 	
-	public void playBGE(int n)
+	public void playBGE(int n) throws SoundNotFoundException
 	{
+		if (n < 0 || n >= files.size()) throw new SoundNotFoundException();
 		bgePlayer.playBGE(n);
 	}
 
 	public void stopBGE() {
 		bgePlayer.stopBGE();
+	}
+	
+	public class SoundNotFoundException extends Exception {
+		private static final long serialVersionUID = -7914441558582497885L;
 	}
 }

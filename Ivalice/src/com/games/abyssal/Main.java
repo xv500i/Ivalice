@@ -1,13 +1,19 @@
 package com.games.abyssal;
 
 import com.games.abyssal.Presentation.Sound.SoundManager;
+import com.games.abyssal.Presentation.Sound.SoundManager.SoundNotFoundException;
 
 public class Main {
 
 	public static void main(String[] args) {
 		
 		SoundManager sound = SoundManager.getInstance();
-		sound.playBGE(0);
+		try {
+			sound.playBGE(0);
+		} catch (SoundNotFoundException e1) {
+			// TODO Auto-generated catch block
+			e1.printStackTrace();
+		}
 		
 		try {
 			Thread.sleep(5000);
