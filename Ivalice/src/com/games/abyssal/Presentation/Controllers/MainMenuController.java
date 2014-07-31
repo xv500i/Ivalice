@@ -1,4 +1,4 @@
-package com.games.abyssal.Presentation;
+package com.games.abyssal.Presentation.Controllers;
 
 public interface MainMenuController {
 	

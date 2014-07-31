@@ -1,4 +1,4 @@
-package com.games.abyssal.Presentation;
+package com.games.abyssal.Presentation.Views;
 
 import com.games.abyssal.Domain.InputController;
 

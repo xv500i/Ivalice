@@ -1,6 +1,8 @@
 package com.games.abyssal.Presentation;
 
 import java.awt.EventQueue;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 import java.awt.event.ItemEvent;
 import java.awt.event.ItemListener;
 import java.io.File;
@@ -23,8 +25,8 @@ import javax.swing.SpinnerNumberModel;
 import javax.swing.SwingConstants;
 import javax.swing.event.ChangeEvent;
 import javax.swing.event.ChangeListener;
-import java.awt.event.ActionListener;
-import java.awt.event.ActionEvent;
+
+import com.games.abyssal.Domain.FunctionUtils;
 
 public class ClassEditor {
 
@@ -165,37 +167,23 @@ public class ClassEditor {
 		for (int i = 0; i < 5; i++) {
 			switch (function) {
 			case FUNCTION_CONSTANT:
-				examples[i] = constant(a);
+				examples[i] = FunctionUtils.constant(a);
 				break;
 			case FUNCTION_ROOT:
-				examples[i] = root(a,b,5*i);
+				examples[i] = FunctionUtils.root(a,b,5*i);
 				break;
 			case FUNCTION_SQUARE:
-				examples[i] = square(a,b,c,5*i);
+				examples[i] = FunctionUtils.square(a,b,c,5*i);
 				break;
 			case FUNCTION_LINEAR:
-				examples[i] = linear(a,b,5*i);
+				examples[i] = FunctionUtils.linear(a,b,5*i);
 				break;
 			}
 		}
 		return examples;
 	}
 
-	private int linear(Float a, Float b, int x) {
-		return (int) (b*x + a);
-	}
-
-	private int square(Float a, Float b, Float c, int x) {
-		return (int) (Math.pow(x, c)*b + a);
-	}
-
-	private int root(Float a, Float b, int x) {
-		return (int) (Math.pow(x, 0.5)*b + a);
-	}
-
-	private int constant(float a) {
-		return (int)a;
-	}
+	
 
 	/**
 	 * Initialize the contents of the frame.
