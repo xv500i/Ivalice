@@ -7,12 +7,12 @@ import java.util.logging.Logger;
 import com.games.abyssal.Domain.Entities.Item;
 import com.games.abyssal.Domain.Entities.Market;
 import com.games.abyssal.Domain.Entities.Player;
-import com.games.abyssal.Domain.Entities.Recipe.ItemLine;
 import com.games.abyssal.Domain.Events.NewPlayerEvent;
 import com.games.abyssal.Domain.Events.Observer;
 import com.games.abyssal.Domain.Events.PlayerDeletedEvent;
 import com.games.abyssal.Presentation.Controllers.MainMenuController;
 import com.games.abyssal.Presentation.Models.MainMenuModel;
+import com.games.abyssal.Presentation.Views.InputController;
 import com.games.abyssal.Presentation.Views.MainMenuView;
 
 public class Game implements Observer, MainMenuController {
@@ -32,7 +32,7 @@ public class Game implements Observer, MainMenuController {
 		PlayerDeletedEvent.addObserver(this);
 		items = new ArrayList<Item>();
 		market = new Market();
-		inputController = new KeyboardAndMouseController();
+		inputController = new InputController();
 		MainMenuModel mainMenuModel = new MainMenuModel(activePlayer);
 		mainMenuView = new MainMenuView(inputController, this, mainMenuModel);
 	}

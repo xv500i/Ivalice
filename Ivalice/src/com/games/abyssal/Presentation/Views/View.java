@@ -1,6 +1,5 @@
 package com.games.abyssal.Presentation.Views;
 
-import com.games.abyssal.Domain.InputController;
 
 public abstract class View {
 	
@@ -12,4 +11,6 @@ public abstract class View {
 	}
 	
 	public abstract void update(long msec);
+	
+	public abstract void render();
 }

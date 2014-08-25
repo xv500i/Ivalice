@@ -1,6 +1,5 @@
 package com.games.abyssal.Presentation.Views;
 
-import com.games.abyssal.Domain.InputController;
 import com.games.abyssal.Presentation.Controllers.MainMenuController;
 import com.games.abyssal.Presentation.Models.MainMenuModel;
 
@@ -25,6 +24,11 @@ public class MainMenuView extends View {
 	public void buttonExitClicked()
 	{
 		controller.onExit();
+	}
+
+	@Override
+	public void render() {
+		
 	}
 
 }
